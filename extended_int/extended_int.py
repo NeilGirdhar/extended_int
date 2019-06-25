@@ -1,5 +1,6 @@
-from numbers import Real, Integral
 from math import inf, isnan
+from numbers import Integral, Real
+
 from .extended_integral import ExtendedIntegral
 
 __all__ = ['IntegerInfinity', 'int_inf']

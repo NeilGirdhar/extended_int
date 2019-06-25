@@ -1,4 +1,4 @@
-from numbers import Real, Integral
+from numbers import Integral, Real
 
 __all__ = ['ExtendedIntegral']
 
