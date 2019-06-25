@@ -76,7 +76,7 @@ class IntegerInfinity(ExtendedIntegral):
         return float(self)
 
     def __int__(self):
-        raise UndefinedIntegerInfinityError()
+        raise OverflowError()
 
     def __float__(self):
         if self.negative:
