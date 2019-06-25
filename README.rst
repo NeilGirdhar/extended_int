@@ -1,10 +1,12 @@
-====
-# extended_int: Extended Integers for Python
-====
+##########################################
+extended_int: Extended Integers for Python
+##########################################
+
 .. image:: https://badge.fury.io/py/extended_int.svg
     :target: https://badge.fury.io/py/extended_int
 
-Example:
+Example
+=======
 
 .. code-block:: python
     In [0]: from numbers import *
