@@ -9,6 +9,7 @@ Example
 =======
 
 .. code-block:: python
+
     In [0]: from numbers import *
 
     In [0]: from extended_int import *
