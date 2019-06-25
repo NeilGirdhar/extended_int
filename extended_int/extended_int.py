@@ -1,11 +1,11 @@
 from numbers import Real, Integral
 from math import inf, isnan
-from .extended_integral import Infinite
+from .extended_integral import ExtendedIntegral
 
-__all__ = ['IntegerInfinity']
+__all__ = ['IntegerInfinity', 'int_inf']
 
 
-class IntegerInfinity(Infinite):
+class IntegerInfinity(ExtendedIntegral):
 
     def __init__(self, negative=False):
         self.negative = negative
@@ -236,6 +236,9 @@ class IntegerInfinity(Infinite):
 
     def __ceil__(self):
         raise UndefinedIntegerInfinityError()
+
+
+int_inf = IntegerInfinity()
 
 
 class UndefinedIntegerInfinityError(Exception):

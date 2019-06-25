@@ -3,12 +3,12 @@ from setuptools import find_packages, setup
 
 setup(
     name='extended_int',
-    version='0.1',
+    version='0.4',
     description='Python classes that provides support for extended integers (the set of integers, and infinity).',
     author='Neil Girdhar',
     author_email='mistersheik@gmail.com',
     url='https://github.com/NeilGirdhar/extended_int',
-    download_url='https://github.com/neilgirdhar/extended_int/archive/0.1.tar.gz',
+    download_url='https://github.com/neilgirdhar/extended_int/archive/0.4.tar.gz',
     packages=find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",
