@@ -35,7 +35,7 @@ Example
 
     Out[8]: False
 
-    In [9]: isinstance(i, ExtendedIntegral)
+    In [9]: isinstance(int_inf, ExtendedIntegral)
 
     Out[9]: True
 
