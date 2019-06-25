@@ -10,45 +10,35 @@ Example
 
 .. code-block:: python
 
-    In [0]: from numbers import *
+    In [1]: from numbers import Real, Integral
 
-    In [0]: from extended_int import *
+    In [2]: from extended_int import ExtendedIntegral, int_inf
 
-    In [0]: i = IntegerInfinity()
+    In [3]: float(int_inf)
+    Out[3]: inf
 
-    In [4]: float(i)
-    Out[4]: inf
-
-    In [5]: print(i)
+    In [4]: print(int_inf)
     inf
 
-    In [6]: i ** i
+    In [5]: int(int_inf)
+    ---------------------------------------------------------------------------
+    OverflowError                             Traceback (most recent call last)
 
-    Out[6]: inf
+    In [6]: isinstance(int_inf, Real)
+    Out[6]: True
 
-    In [7]: i
-    Out[7]: inf
+    In [7]: isinstance(int_inf, Integral)
+    Out[7]: False
 
-    In [9]: isinstance(i, Real)
+
+    In [8]: isinstance(2.5, ExtendedIntegral)
+
+    Out[8]: False
+
+    In [9]: isinstance(i, ExtendedIntegral)
 
     Out[9]: True
 
-    In [10]: isinstance(i, Integral)
+    In [10]: isinstance(2, ExtendedIntegral)
 
-    Out[10]: False
-
-    In [11]: isinstance(i, Infinite)
-
-    Out[11]: True
-
-    In [12]: isinstance(i, ExtendedIntegral)
-
-    Out[12]: True
-
-    In [13]: isinstance(2, ExtendedIntegral)
-
-    Out[13]: True
-
-    In [14]: isinstance(2, Infinite)
-
-    Out[14]: False
+    Out[10]: True
