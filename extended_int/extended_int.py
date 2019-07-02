@@ -8,11 +8,11 @@ __all__ = ['IntegerInfinity', 'int_inf']
 
 class IntegerInfinity(ExtendedIntegral):
 
-    def __init__(self, negative=False):
+    def __init__(self, negative: bool = False):
         self.negative = negative
 
     @staticmethod
-    def _from_float(x):
+    def _from_float(x: float):
         if x == inf:
             return IntegerInfinity()
         if x == -inf:
@@ -101,7 +101,7 @@ class IntegerInfinity(ExtendedIntegral):
 
     def __sub__(self, other):
         if isinstance(other, IntegerInfinity):
-            if self.negative == -other.negative:
+            if self.negative != other.negative:
                 return self
             raise UndefinedIntegerInfinityError()
         if isinstance(other, Integral):
