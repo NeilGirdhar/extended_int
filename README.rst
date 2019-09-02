@@ -1,9 +1,10 @@
-##########################################
-extended_int: Extended Integers for Python
-##########################################
-
+=================
+Extended Integers
+=================
 .. image:: https://badge.fury.io/py/extended_int.svg
     :target: https://badge.fury.io/py/extended_int
+
+This repository provides a Python base class that implements extended integers.
 
 Example
 =======
