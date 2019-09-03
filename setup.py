@@ -13,7 +13,7 @@ setup(
         "Bug Tracker": "https://github.com/NeilGirdhar/extended_int/issues",
         "Source Code": "https://github.com/NeilGirdhar/extended_int",
     },
-    download_url = "https://pypi.python.org/pypi/extended_int",
+    download_url="https://pypi.python.org/pypi/extended_int",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",

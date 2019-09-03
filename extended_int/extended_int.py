@@ -1,4 +1,4 @@
-from math import inf, isnan
+from math import inf
 from numbers import Integral, Real
 
 from .extended_integral import ExtendedIntegral
