@@ -7,4 +7,4 @@ class ExtendedIntegral(Real):
     pass
 
 
-ExtendedIntegral.register(Integral)
+ExtendedIntegral.register(Integral)  # type: ignore
