@@ -10,7 +10,7 @@ __all__ = ['IntegerInfinity', 'int_inf']
 
 
 class IntegerInfinity(ExtendedIntegral):
-    def __init__(self, negative: bool = False):
+    def __init__(self, *, negative: bool = False):
         self.negative = negative
 
     @staticmethod
@@ -18,8 +18,8 @@ class IntegerInfinity(ExtendedIntegral):
         if x == inf:
             return IntegerInfinity()
         if x == -inf:
-            return IntegerInfinity(True)
-        raise UndefinedIntegerInfinityError()
+            return IntegerInfinity(negative=True)
+        raise UndefinedIntegerInfinityError
 
     # Display operators.
     def __repr__(self) -> str:
@@ -79,7 +79,7 @@ class IntegerInfinity(ExtendedIntegral):
         return float(self)
 
     def __int__(self) -> NoReturn:
-        raise OverflowError()
+        raise OverflowError
 
     def __float__(self) -> float:
         if self.negative:
@@ -87,14 +87,14 @@ class IntegerInfinity(ExtendedIntegral):
         return inf
 
     def __index__(self) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     # Binary operators.
     def __add__(self, other: Any) -> Any:
         if isinstance(other, IntegerInfinity):
             if self.negative == other.negative:
                 return self
-            raise UndefinedIntegerInfinityError()
+            raise UndefinedIntegerInfinityError
         if isinstance(other, Integral):
             return self
         if isinstance(other, Real):
@@ -105,7 +105,7 @@ class IntegerInfinity(ExtendedIntegral):
         if isinstance(other, IntegerInfinity):
             if self.negative != other.negative:
                 return self
-            raise UndefinedIntegerInfinityError()
+            raise UndefinedIntegerInfinityError
         if isinstance(other, Integral):
             return self
         if isinstance(other, Real):
@@ -116,7 +116,7 @@ class IntegerInfinity(ExtendedIntegral):
         if isinstance(other, IntegerInfinity):
             if self.negative == other.negative:
                 return IntegerInfinity()
-            return IntegerInfinity(True)
+            return IntegerInfinity(negative=True)
         if isinstance(other, Integral):
             return self
         if isinstance(other, Real):
@@ -127,20 +127,20 @@ class IntegerInfinity(ExtendedIntegral):
         return NotImplemented
 
     def __truediv__(self, other: Any) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __floordiv__(self, other: Any) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __mod__(self, other: Any) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __divmod__(self, other: Any) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __pow__(self, other: Any, modulo: None | int = None) -> ExtendedIntegral:
         if modulo is not None:
-            raise UndefinedIntegerInfinityError()
+            raise UndefinedIntegerInfinityError
         if other < 0:
             return 0  # type: ignore
         return self
@@ -173,22 +173,22 @@ class IntegerInfinity(ExtendedIntegral):
         return NotImplemented
 
     def __rtruediv__(self, other: Any) -> Any:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __rfloordiv__(self, other: Any) -> Any:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __rmod__(self, other: Any) -> Any:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __rdivmod__(self, other: Any) -> Any:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __rpow__(self, other: Any) -> Any:
         if isinstance(other, (Integral, IntegerInfinity)):
             if self.negative:
                 if other == 0:
-                    raise UndefinedIntegerInfinityError()
+                    raise UndefinedIntegerInfinityError
                 return 0
             if other < 0:
                 return IntegerInfinity(True)
@@ -216,7 +216,7 @@ class IntegerInfinity(ExtendedIntegral):
 
     # Unary operators.
     def __neg__(self) -> IntegerInfinity:
-        return IntegerInfinity(not self.negative)
+        return IntegerInfinity(negative=not self.negative)
 
     def __pos__(self) -> IntegerInfinity:
         return self
@@ -229,16 +229,16 @@ class IntegerInfinity(ExtendedIntegral):
 
     # Rounding.
     def __round__(self, ndigits: None | int = None) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __trunc__(self) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __floor__(self) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
     def __ceil__(self) -> NoReturn:
-        raise UndefinedIntegerInfinityError()
+        raise UndefinedIntegerInfinityError
 
 
 int_inf = IntegerInfinity()
